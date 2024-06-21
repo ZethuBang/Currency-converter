@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+</head>
+<body>
+    <h1>Currency Converter</h1>
+
+    <div>
+        <label for="dollars">Dollars (USD): </label>
+        <input type="number" id="dollars" placeholder="Enter amount in USD">
+        <button onclick="convertDollars()">Convert to ZAR</button>
+        <p id="dollarsResult"></p>
+    </div>
+
+    <div>
+        <label for="pounds">Pounds (GBP): </label>
+        <input type="number" id="pounds" placeholder="Enter amount in GBP">
+        <button onclick="convertPounds()">Convert to ZAR</button>
+        <p id="poundsResult"></p>
+    </div>
+
+    <div>
+        <label for="pula">Pula (BWP): </label>
+        <input type="number" id="pula" placeholder="Enter amount in BWP">
+        <button onclick="convertPula()">Convert to ZAR</button>
+        <p id="pulaResult"></p>
+    </div>
+
+    <script>
+        const USD_TO_ZAR = 17.97;
+        const GBP_TO_ZAR = 22.75;
+        const BWP_TO_ZAR = 1.33;
+
+        function convertDollars() {
+            const dollars = document.getElementById('dollars').value;
+            const result = dollars * USD_TO_ZAR;
+            document.getElementById('dollarsResult').innerText = `${dollars} USD to ZAR: ${result.toFixed(2)}`;
+        }
+
+        function convertPounds() {
+            const pounds = document.getElementById('pounds').value;
+            const result = pounds * GBP_TO_ZAR;
+            document.getElementById('poundsResult').innerText = `${pounds} GBP to ZAR: ${result.toFixed(2)}`;
+        }
+
+        function convertPula() {
+            const pula = document.getElementById('pula').value;
+            const result = pula * BWP_TO_ZAR;
+            document.getElementById('pulaResult').innerText = `${pula} BWP to ZAR: ${result.toFixed(2)}`;
+        }
+    </script>
+
+    </body>
+    </html>
